@@ -60,13 +60,6 @@ async def main_MemberCounterMeta():
             await asyncio.sleep(e.x)
 
 
-@MemberCounterMeta.on_message(filters.command("status", "!") & filters.me)
-async def alive(_, message: Message):
-    await message.edit("Your MemberCounter is alive!")
-    await asyncio.sleep(10)
-    await message.delete()                 
-                        
-
 async def MemberCounterMeta():
     async with MemberCounterMeta:
             while True:
