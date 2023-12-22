@@ -54,7 +54,7 @@ async def main_MemberCounterMeta():
                 await asyncio.sleep(900) # 15 minutes = 900 seconds
         except FloodWait as e:
             await asyncio.sleep(e.x)
-@MemberCounterMeta.on_message(filters.command("status", "!") & filters.me)
+@app.on_message(filters.command("status", "!") & filters.me)
 async def alive(_, message: Message):
     await message.edit("Your MemberCounter is alive!")
     await asyncio.sleep(10)
