@@ -59,7 +59,12 @@ async def main_MemberCounterMeta():
         except FloodWait as e:
             await asyncio.sleep(e.x)
 
-                 
+
+@MemberCounterMeta.on_message(filters.command("status", "!") & filters.me)
+async def alive(_, message: Message):
+    await message.edit("Your MemberCounter is alive!")
+    await asyncio.sleep(10)
+    await message.delete()                 
                         
 
 async def MemberCounterMeta():
@@ -94,12 +99,7 @@ async def MemberCounterMeta():
                 await MemberCounterMeta.edit_message_text(int(BOT_CHANNEL_OR_GROUP_ID), BOT_MESSAGE_ID, xxx_teletips)
                 print(f"Last checked on: {last_update}")                
                 await asyncio.sleep(900)
-
-@MemberCounterMeta.on_message(filters.command("status", "!") & filters.me)
-async def alive(_, message: Message):
-    await message.edit("Your MemberCounter is alive!")
-    await asyncio.sleep(10)
-    await message.delete()  
+  
 
 MemberCounterMeta.run(main_MemberCounterMeta())
 
