@@ -10,6 +10,7 @@ import pytz
 Bot = Client(
     name = "membercountermeta",
     api_id = int(os.environ["API_ID"]),
+    plugins={"root": "plugins"},
     api_hash = os.environ["API_HASH"],
     session_string = os.environ["SESSION_STRING"]
 )
