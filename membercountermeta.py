@@ -30,7 +30,7 @@ async def main_MemberCounterMeta():
         desired_timezone = 'Asia/Kolkata'
 
     # Get the current time in the specified timezone
-        current_time = datetime.now(pytz.timezone(desired_timezone)).strftime("%Y-%m-%d %H:%M:%S")
+        
 
         try:
             while True:
@@ -39,6 +39,7 @@ async def main_MemberCounterMeta():
                 
                 for CHANNEL_OR_GROUP in CHANNEL_OR_GROUP_LIST:
                     try:
+                        current_time = await datetime.now(pytz.timezone(desired_timezone)).strftime("%Y-%m-%d %H:%M:%S")
                         get_chat_teletips = await MemberCounterMeta.get_chat(int(CHANNEL_OR_GROUP))   
                         if get_chat_teletips.type == "channel":
                             edit_message_text_teletips += f"\n\n📣  **{get_chat_teletips.title} 📊**\n👤 ├ <i>{get_chat_teletips.members_count} Subscribers</i>\n🔗 └ <i>[Link]({get_chat_teletips.invite_link})</i>"
