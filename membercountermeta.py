@@ -89,7 +89,7 @@ async def main_MemberCounterMeta():
                             await MemberCounterMeta.read_chat_history(bot)
                         else:
                             xxx_teletips += f"\n\n🤖  @{bot}\n        └ **Alive** ✅"
-                            await app.read_chat_history(bot)
+                            await MemberCounterMeta.read_chat_history(bot)
                     except FloodWait as e:
                         await asyncio.sleep(e.x)            
                 time = datetime.datetime.now(pytz.timezone(f"{TIME_ZONE}"))
