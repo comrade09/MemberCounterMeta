@@ -59,7 +59,7 @@ async def main_MemberCounterMeta():
                     pass    
                 print(text_3)
                 print("Checking...")
-                xxx_teletips = f"📈 | **Real-Time Bot Status** [Powered By Nihar](t.me/ryuk_xy)"
+                xxx_teletips = f"📈 | **Real-Time Bot Status** Powered By Nihar"
                 for bot in BOT_LIST:
                     try:
                         yyy_teletips = await MemberCounterMeta.send_message(bot, "/start")
