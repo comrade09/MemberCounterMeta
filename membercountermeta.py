@@ -27,10 +27,10 @@ print(text_1)
 async def main_MemberCounterMeta():
     async with MemberCounterMeta:
         # Specify the Indian Standard Time (IST) timezone
-    desired_timezone = 'Asia/Kolkata'
+        desired_timezone = 'Asia/Kolkata'
 
     # Get the current time in the specified timezone
-    current_time = datetime.now(pytz.timezone(desired_timezone)).strftime("%Y-%m-%d %H:%M:%S")
+        current_time = datetime.now(pytz.timezone(desired_timezone)).strftime("%Y-%m-%d %H:%M:%S")
 
         try:
             while True:
