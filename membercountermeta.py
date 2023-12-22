@@ -52,14 +52,14 @@ async def main_MemberCounterMeta():
                         await asyncio.sleep(2)
                     except ValueError:
                         print(f'ID not found: {CHANNEL_OR_GROUP }. Skipping...')                       
-                edit_message_text_teletips += f"\n\n<i>🌀 Automatically refreshes every 15 minutes \n\n ♻️ **Last Refreshed** : {current_time} ({desired_timezone}) </i>"
+                edit_message_text_teletips += f"\n\n<i>🌀 Automatically refreshes every 45 minutes \n\n ♻️ **Last Refreshed** : {current_time} ({desired_timezone}) </i>"
                 try:
                     await MemberCounterMeta.edit_message_text(int(CHANNEL_OR_GROUP_ID), MESSAGE_ID, edit_message_text_teletips, disable_web_page_preview=True)
                 except Exception:
                     pass    
                 print(text_3)
                 print("Checking...")
-                xxx_teletips = f"📈 | **Real-Time Bot Status**"
+                xxx_teletips = f"📈 | **Real-Time Bot Status** [Powered By Nihar](t.me/ryuk_xy)"
                 for bot in BOT_LIST:
                     try:
                         yyy_teletips = await MemberCounterMeta.send_message(bot, "/start")
@@ -69,24 +69,25 @@ async def main_MemberCounterMeta():
                         async for ccc in zzz_teletips:
                             bbb = ccc.id
                         if aaa == bbb:
-                            xxx_teletips += f"\n\n🤖  @{bot}\n        └ **Down** ❌"
+                            xxx_teletips += f"\n\n🌀  @{bot}\n        └ **Down** ❗️"
                             for bot_admin_id in BOT_ADMIN_IDS:
                                 try:
-                                    await MemberCounterMeta.send_message(int(bot_admin_id), f"🚨 **Beep! Beep!! @{bot} is down** ❌")
+                                    await MemberCounterMeta.send_message(int(bot_admin_id), f"🚨 **Beep! Beep!! @{bot} is down** ❗️")
                                 except Exception:
                                     pass
                             await MemberCounterMeta.read_chat_history(bot)
                         else:
-                            xxx_teletips += f"\n\n🤖  @{bot}\n        └ **Alive** ✅"
+                            xxx_teletips += f"\n\n🌀  @{bot}\n        └ **Alive** ✅"
                             await MemberCounterMeta.read_chat_history(bot)
                     except FloodWait as e:
                         await asyncio.sleep(e.x)            
                 time = datetime.now(pytz.timezone(f"{TIME_ZONE}"))
-                last_update = time.strftime(f"%d %b %Y at %I:%M %p")
-                xxx_teletips += f"\n\n✔️ Last checked on: {last_update} ({TIME_ZONE})\n\n<i>♻️ Refreshes automatically</i>"
+                last_update = time.strftime(f"%Y-%m-%d %H:%M:%S")
+                xxx_teletips += f"\n\n⌛️ Last checked on: {last_update} ({TIME_ZONE})\n\n<i>♻️ Refreshes automatically Every 45 Minutues</i>"
                 await MemberCounterMeta.edit_message_text(int(BOT_CHANNEL_OR_GROUP_ID), BOT_MESSAGE_ID, xxx_teletips)
-                print(f"Last checked on: {last_update}")                
-                await asyncio.sleep(900) # 15 minutes = 900 seconds
+                print(f"Last checked on: {last_update}")
+                await MemberCounterMeta.send_message(int(bot_admin_id), f"Last checked on: {last_update}")
+                await asyncio.sleep(2700) # 15 minutes = 900 seconds
         except FloodWait as e:
             await asyncio.sleep(e.x)
 @MemberCounterMeta.on_message(filters.command("status", "!") & filters.me)
