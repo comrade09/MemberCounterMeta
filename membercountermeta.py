@@ -92,7 +92,7 @@ async def main_MemberCounterMeta():
                             await MemberCounterMeta.read_chat_history(bot)
                     except FloodWait as e:
                         await asyncio.sleep(e.x)            
-                time = datetime.datetime.now(pytz.timezone(f"{TIME_ZONE}"))
+                time = datetime.now(pytz.timezone(f"{TIME_ZONE}"))
                 last_update = time.strftime(f"%d %b %Y at %I:%M %p")
                 xxx_teletips += f"\n\n✔️ Last checked on: {last_update} ({TIME_ZONE})\n\n<i>♻️ Refreshes automatically</i>"
                 await MemberCounterMeta.edit_message_text(int(BOT_CHANNEL_OR_GROUP_ID), BOT_MESSAGE_ID, xxx_teletips)
