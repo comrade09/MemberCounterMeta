@@ -73,8 +73,8 @@ app = Client(
 )
 TIME_ZONE = os.environ["TIME_ZONE"]
 BOT_LIST = [i.strip() for i in os.environ.get("BOT_LIST").split(' ')]
-BOT_CHANNEL_OR_GROUP_ID = int(os.environ["CHANNEL_OR_GROUP_ID"])
-BOT_MESSAGE_ID = int(os.environ["MESSAGE_ID"])
+BOT_CHANNEL_OR_GROUP_ID = int(os.environ["BOT_CHANNEL_OR_GROUP_ID"])
+BOT_MESSAGE_ID = int(os.environ["BOT_MESSAGE_ID"])
 BOT_ADMIN_IDS = [int(i.strip()) for i in os.environ.get("BOT_ADMIN_IDS").split(' ')]
 
 async def main_teletips():
