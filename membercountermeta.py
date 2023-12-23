@@ -84,11 +84,6 @@ async def main_MemberCounterMeta():
                 print(f"Last checked on: {last_update}")
                 await MemberCounterMeta.send_message(int(bot_admin_id), f"Last checked on: {last_update}")
                 await asyncio.sleep(7)
-                for id  in C_MESSAGE_ID:
-                    try:
-                      pass
-                    except Exception:
-                        pass  
                 print(f"trying to do countdown")
                 target_date = datetime(2024, 5, 5, 23, 59, 59)
                 desired_timezone_c = 'Asia/Kolkata'
