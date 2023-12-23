@@ -90,9 +90,9 @@ async def main_MemberCounterMeta():
                 print(f"trying to do countdown")
                 target_date = datetime(2023, 12, 31, 23, 59, 59)
                 india_timezone = pytz.timezone('Asia/Kolkata')
-                current_time = datetime.now(india_timezone)
+                current_time_c = datetime.now(india_timezone)
                 target_date = india_timezone.localize(target_date)
-                remaining_time = target_date - current_time  # Use 'Asia/Kolkata' for Indian Standard Time
+                remaining_time = target_date - current_time_c  # Use 'Asia/Kolkata' for Indian Standard Time
                 if remaining_time.total_seconds() <= 0:
                     break
                     days, seconds = divmod(remaining_time.seconds, 86400)
