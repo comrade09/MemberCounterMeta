@@ -9,7 +9,7 @@ from pyrogram import Client, filters
 from pyrogram.types import Message
 from pyrogram.errors import FloodWait
 import asyncio
-from datetime import datetime
+from datetime import datetime , timedelta
 import pytz
 from texts.texts_teletips import *
 
@@ -89,14 +89,17 @@ async def main_MemberCounterMeta():
                 await MemberCounterMeta.edit_message_text(int(BOT_CHANNEL_OR_GROUP_ID), BOT_MESSAGE_ID, xxx_teletips)
                 print(f"Last checked on: {last_update}")
                 await MemberCounterMeta.send_message(int(bot_admin_id), f"Last checked on: {last_update}")
-                await asyncio.sleep(5)
+                await asyncio.sleep(7)
+                for C_MESSAGE_ID:
+                    try:
+                        
                 print(f"trying to do countdown")
                 target_date = datetime(2024, 5, 5, 23, 59, 59)
-                india_timezone = pytz.timezone('Asia/Kolkata')
-                current_time_c = datetime.now(india_timezone)
-                target_date = india_timezone.localize(target_date)
+                desired_timezone_c = 'Asia/Kolkata'
+                current_time_c = datetime.now(pytz.timezone(desired_timezone_c))
                 remaining_time = target_date - current_time_c  # Use 'Asia/Kolkata' for Indian Standard Time
                 if remaining_time.total_seconds() <= 0:
+                    print("Countdown reached zero.")
                     break
                 days, seconds = divmod(remaining_time.seconds, 86400)
                 hours, seconds = divmod(seconds, 3600)
