@@ -90,7 +90,7 @@ async def main_MemberCounterMeta():
                 print(f"Last checked on: {last_update}")
                 await MemberCounterMeta.send_message(int(bot_admin_id), f"Last checked on: {last_update}")
                 print(f"trying to do countdown")
-                target_date = datetime(2023, 12, 31, 23, 59, 59)
+                target_date = datetime(2024, 05, 05, 23, 59, 59)
                 india_timezone = pytz.timezone('Asia/Kolkata')
                 current_time_c = datetime.now(india_timezone)
                 target_date = india_timezone.localize(target_date)
@@ -100,9 +100,9 @@ async def main_MemberCounterMeta():
                 days, seconds = divmod(remaining_time.seconds, 86400)
                 hours, seconds = divmod(seconds, 3600)
                 minutes, seconds = divmod(seconds, 60)
-                countdown_message = (f"Countdown to December 31, 2023 (India Time):\n {days} days, {hours} hours, {minutes} minutes, {seconds} seconds")
+                countdown_message = (f"🌀**COUNTDOWN FOR NEET 2024 to 5 May, 2024** \n\n **Time Left**: {days} days, {hours} hours, {minutes} minutes, {seconds} seconds \n\n <i>♻️ Refreshes automatically Every 45 Minutues</i>")
                 await MemberCounterMeta.edit_message_text(int(BOT_CHANNEL_OR_GROUP_ID), C_MESSAGE_ID, countdown_message)
-                print(f"Countdown to December 31, 2023 (India Time):\n {days} days, {hours} hours, {minutes} minutes, {seconds} seconds")
+                print(f"COUNTDOWN FOR NEET 2024 to 5 May, 2024 \n\n Time Left: {days} days, {hours} hours, {minutes} minutes, {seconds} seconds \n\n  ")
                 await asyncio.sleep(2700)  # 15 minutes = 900 seconds # 15 minutes = 900 seconds
         except FloodWait as e:
             await asyncio.sleep(e.x)
