@@ -81,6 +81,8 @@ async def main_MemberCounterMeta():
                             await MemberCounterMeta.read_chat_history(bot)
                     except FloodWait as e:
                         await asyncio.sleep(e.x)            
+                
+                # Countdown Logic
                 time = datetime.now(pytz.timezone(f"{TIME_ZONE}"))
                 last_update = time.strftime(f"%Y-%m-%d %H:%M:%S")
                 xxx_teletips += f"\n\n⌛️ Last checked on: {last_update} ({TIME_ZONE})\n\n<i>♻️ Refreshes automatically Every 45 Minutues</i>"
@@ -95,12 +97,13 @@ async def main_MemberCounterMeta():
                 remaining_time = target_date - current_time_c  # Use 'Asia/Kolkata' for Indian Standard Time
                 if remaining_time.total_seconds() <= 0:
                     break
-                    days, seconds = divmod(remaining_time.seconds, 86400)
-                    hours, seconds = divmod(seconds, 3600)
-                    minutes, seconds = divmod(seconds, 60)
-                    countdown_message = (f"Countdown to December 31, 2023 (India Time):\n {days} days, {hours} hours, {minutes} minutes, {seconds} seconds")
-                    await MemberCounterMeta.edit_message_text(int(BOT_CHANNEL_OR_GROUP_ID), C_MESSAGE_ID, countdown_message)
-                await asyncio.sleep(2700) # 15 minutes = 900 seconds
+                days, seconds = divmod(remaining_time.seconds, 86400)
+                hours, seconds = divmod(seconds, 3600)
+                minutes, seconds = divmod(seconds, 60)
+                countdown_message = (f"Countdown to December 31, 2023 (India Time):\n {days} days, {hours} hours, {minutes} minutes, {seconds} seconds")
+                await MemberCounterMeta.edit_message_text(int(BOT_CHANNEL_OR_GROUP_ID), C_MESSAGE_ID, countdown_message)
+                print(f"Countdown to December 31, 2023 (India Time):\n {days} days, {hours} hours, {minutes} minutes, {seconds} seconds")
+                await asyncio.sleep(2700)  # 15 minutes = 900 seconds # 15 minutes = 900 seconds
         except FloodWait as e:
             await asyncio.sleep(e.x)
 @MemberCounterMeta.on_message(filters.command("status", "!") & filters.me)
