@@ -85,8 +85,8 @@ async def main_MemberCounterMeta():
                 await MemberCounterMeta.send_message(int(bot_admin_id), f"Last checked on: {last_update}")
                 await asyncio.sleep(7)
                 print(f"trying to do countdown")
-                target_date = datetime(2024, 5, 5, 23, 59, 59)
                 desired_timezone_c = 'Asia/Kolkata'
+                target_date = datetime(2024, 5, 5, 23, 59, 59 , tzinfo=pytz.timezone(desired_timezone_c))
                 current_time_c = datetime.now(pytz.timezone(desired_timezone_c))
                 remaining_time = target_date - current_time_c  # Use 'Asia/Kolkata' for Indian Standard Time
                
