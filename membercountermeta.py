@@ -93,9 +93,10 @@ async def main_MemberCounterMeta():
                 if remaining_time.total_seconds() <= 0:
                     print("Countdown reached zero.")
                 else: 
-                    days, seconds = divmod(remaining_time.seconds, 86400)
-                    hours, seconds = divmod(seconds, 3600)
-                    minutes, seconds = divmod(seconds, 60)
+                    total_seconds = remaining_time.total_seconds()
+                    days, seconds_remaining = divmod(total_seconds, 86400)
+                    hours, seconds_remaining = divmod(seconds_remaining, 3600)
+                    minutes, seconds = divmod(seconds_remaining, 60)
                 countdown_message = (f"🌀**COUNTDOWN FOR NEET 2024 to 5 May, 2024** \n\n **Time Left**: {days} days, {hours} hours, {minutes} minutes, {seconds} seconds \n\n <i>♻️ Refreshes automatically Every 45 Minutues</i>")
                 await MemberCounterMeta.edit_message_text(int(BOT_CHANNEL_OR_GROUP_ID), C_MESSAGE_ID, countdown_message)
                 print(f"COUNTDOWN FOR NEET 2024 to 5 May, 2024 \n\n Time Left: {days} days, {hours} hours, {minutes} minutes, {seconds} seconds \n\n  ")
