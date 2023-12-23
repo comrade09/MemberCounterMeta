@@ -28,7 +28,7 @@ BOT_LIST = [i.strip() for i in os.environ.get("BOT_LIST").split(' ')]
 BOT_CHANNEL_OR_GROUP_ID = int(os.environ["BOT_CHANNEL_OR_GROUP_ID"])
 BOT_MESSAGE_ID = int(os.environ["BOT_MESSAGE_ID"])
 BOT_ADMIN_IDS = [int(i.strip()) for i in os.environ.get("BOT_ADMIN_IDS").split(' ')]
-BOT_MESSAGE_ID = int(os.environ["C_MESSAGE_ID"])
+c_MESSAGE_ID = int(os.environ["C_MESSAGE_ID"])
 
 
 
