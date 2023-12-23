@@ -90,7 +90,7 @@ async def main_MemberCounterMeta():
                 print(f"Last checked on: {last_update}")
                 await MemberCounterMeta.send_message(int(bot_admin_id), f"Last checked on: {last_update}")
                 print(f"trying to do countdown")
-                target_date = datetime(2024, 05, 05, 23, 59, 59)
+                target_date = datetime(2024, 5, 5, 23, 59, 59)
                 india_timezone = pytz.timezone('Asia/Kolkata')
                 current_time_c = datetime.now(india_timezone)
                 target_date = india_timezone.localize(target_date)
