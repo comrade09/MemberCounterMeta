@@ -89,6 +89,7 @@ async def main_MemberCounterMeta():
                 await MemberCounterMeta.edit_message_text(int(BOT_CHANNEL_OR_GROUP_ID), BOT_MESSAGE_ID, xxx_teletips)
                 print(f"Last checked on: {last_update}")
                 await MemberCounterMeta.send_message(int(bot_admin_id), f"Last checked on: {last_update}")
+                await asyncio.sleep(5)
                 print(f"trying to do countdown")
                 target_date = datetime(2024, 5, 5, 23, 59, 59)
                 india_timezone = pytz.timezone('Asia/Kolkata')
