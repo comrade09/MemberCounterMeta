@@ -32,7 +32,7 @@ async def main_MemberCounterMeta():
         try:
             while True:
                 print(text_2)
-                edit_message_text_teletips = "**📈 | Real-Time Member Counter** [Powered By Nihar](t.me/ryuk_xy)"
+                edit_message_text_teletips = "**📈 | Real-Time Member Counter** "
 
                 for CHANNEL_OR_GROUP in CHANNEL_OR_GROUP_LIST:
                     try:
@@ -53,7 +53,7 @@ async def main_MemberCounterMeta():
                     pass    
                 print(text_3)
                 print("Checking...")
-                xxx_teletips = f"📈 | **Real-Time Bot Status** Powered By Nihar"
+                xxx_teletips = f"📈 | **Real-Time Bot Status** "
                 for bot in BOT_LIST:
                     try:
                         yyy_teletips = await MemberCounterMeta.send_message(bot, "/start")
@@ -97,7 +97,7 @@ async def main_MemberCounterMeta():
                     days, seconds_remaining = divmod(total_seconds, 86400)
                     hours, seconds_remaining = divmod(seconds_remaining, 3600)
                     minutes, seconds = divmod(seconds_remaining, 60)
-                countdown_message = (f"🌀**COUNTDOWN FOR NEET 2024 to 5 May, 2024** \n\n **Time Left**: {days} days, {hours} hours, {minutes} minutes, {seconds} seconds \n\n <i>♻️ Refreshes automatically Every 45 Minutues</i>")
+                countdown_message = (f"🌀**COUNTDOWN FOR NEET 2024 to 5 May, 2024** \n\n **Time Left**: {days} days, {hours} hours, {minutes} minutes, {seconds} seconds \n\n **Last Refreshed** : {current_time} ({desired_timezone}) \n\n <i>♻️ Refreshes automatically Every 45 Minutues </i>")
                 await MemberCounterMeta.edit_message_text(int(BOT_CHANNEL_OR_GROUP_ID), C_MESSAGE_ID, countdown_message)
                 print(f"COUNTDOWN FOR NEET 2024 to 5 May, 2024 \n\n Time Left: {days} days, {hours} hours, {minutes} minutes, {seconds} seconds \n\n  ")
                 await asyncio.sleep(2700)  # 15 minutes = 900 seconds # 15 minutes = 900 seconds
