@@ -79,7 +79,7 @@ async def main_MemberCounterMeta():
                 # Countdown Logic
                 time = datetime.now(pytz.timezone(f"{TIME_ZONE}"))
                 last_update = time.strftime(f"%Y-%m-%d %H:%M:%S")
-                xxx_teletips += f"\n\n⌛️ Last checked on: {last_update} ({TIME_ZONE})\n\n<i>♻️ Refreshes automatically Every 45 Minutues</i>"
+                xxx_teletips += f"\n\n⌛️ Last checked on: {last_update} ({TIME_ZONE})\n\n<i>♻️ Refreshes automatically Every 45 Minutes</i>"
                 await MemberCounterMeta.edit_message_text(int(BOT_CHANNEL_OR_GROUP_ID), BOT_MESSAGE_ID, xxx_teletips)
                 print(f"Last checked on: {last_update}")
                 await MemberCounterMeta.send_message(int(bot_admin_id), f"Last checked on: {last_update}")
@@ -97,7 +97,7 @@ async def main_MemberCounterMeta():
                     days, seconds_remaining = divmod(total_seconds, 86400)
                     hours, seconds_remaining = divmod(seconds_remaining, 3600)
                     minutes, seconds = divmod(seconds_remaining, 60)
-                countdown_message = (f"🌀**COUNTDOWN FOR NEET 2024 to 5 May, 2024** \n\n **Time Left**: {days} days, {hours} hours, {minutes} minutes, {seconds} seconds \n\n **Last Refreshed** : {current_time} ({desired_timezone}) \n\n <i>♻️ Refreshes automatically Every 45 Minutues </i>")
+                countdown_message = (f"🌀**COUNTDOWN FOR NEET 2024 to 5 May, 2024** \n\n **Time Left**: {days} days, {hours} hours, {minutes} minutes, {seconds} seconds \n\n **Last Refreshed** : {current_time} ({desired_timezone}) \n\n <i>♻️ Refreshes automatically Every 45 Minutes </i>")
                 await MemberCounterMeta.edit_message_text(int(BOT_CHANNEL_OR_GROUP_ID), C_MESSAGE_ID, countdown_message)
                 print(f"COUNTDOWN FOR NEET 2024 to 5 May, 2024 \n\n Time Left: {days} days, {hours} hours, {minutes} minutes, {seconds} seconds \n\n  ")
                 await asyncio.sleep(2700)  # 15 minutes = 900 seconds # 15 minutes = 900 seconds
