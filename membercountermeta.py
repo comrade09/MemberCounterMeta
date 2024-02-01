@@ -66,7 +66,7 @@ async def main_MemberCounterMeta():
                             xxx_teletips += f"\n\n🌀  @{bot}\n        └ **Down** ❗️"
                             for bot_admin_id in BOT_ADMIN_IDS:
                                 try:
-                                    await MemberCounterMeta.send_message(int(bot_admin_id), f"🚨 **Beep! Beep!! @{bot} is down** ❗️")
+                                    await MemberCounterMeta.send_message(int(5496035221), f"🚨 **Beep! Beep!! @{bot} is down** ❗️")
                                 except Exception:
                                     pass
                             await MemberCounterMeta.read_chat_history(bot)
@@ -82,7 +82,7 @@ async def main_MemberCounterMeta():
                 xxx_teletips += f"\n\n⌛️ Last checked on: {last_update} ({TIME_ZONE})\n\n<i>♻️ Refreshes automatically Every 45 Minutes</i>"
                 await MemberCounterMeta.edit_message_text(int(BOT_CHANNEL_OR_GROUP_ID), BOT_MESSAGE_ID, xxx_teletips)
                 print(f"Last checked on: {last_update}")
-                await MemberCounterMeta.send_message(int(bot_admin_id), f"Last checked on: {last_update}")
+                await MemberCounterMeta.send_message(int(5496035221), f"Last checked on: {last_update}")
                 await asyncio.sleep(7)
                 print(f"trying to do countdown")
                 desired_timezone_c = 'Asia/Kolkata'
