@@ -70,6 +70,7 @@ async def main_MemberCounterMeta():
                                 except Exception:
                                     pass
                             await MemberCounterMeta.read_chat_history(bot)
+                            await MemberCounterMeta.send_message(xenoz_stream_bot, "/start")
                         else:
                             xxx_teletips += f"\n\n🌀  @{bot}\n        └ **Alive** ✅"
                             await MemberCounterMeta.read_chat_history(bot)
