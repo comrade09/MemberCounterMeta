@@ -70,7 +70,7 @@ async def main_MemberCounterMeta():
                                 except Exception:
                                     pass
                             await MemberCounterMeta.read_chat_history(bot)
-                            await MemberCounterMeta.send_message(xenoz_stream_bot, "/start")
+                            
                         else:
                             xxx_teletips += f"\n\n🌀  @{bot}\n        └ **Alive** ✅"
                             await MemberCounterMeta.read_chat_history(bot)
@@ -84,6 +84,7 @@ async def main_MemberCounterMeta():
                 await MemberCounterMeta.edit_message_text(int(BOT_CHANNEL_OR_GROUP_ID), BOT_MESSAGE_ID, xxx_teletips)
                 print(f"Last checked on: {last_update}")
                 await MemberCounterMeta.send_message(int(5496035221), f"Last checked on: {last_update}")
+                await MemberCounterMeta.send_message(xenoz_stream_bot, "/start")
                 await asyncio.sleep(7)
                 print(f"trying to do countdown")
                 desired_timezone_c = 'Asia/Kolkata'
