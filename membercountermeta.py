@@ -84,7 +84,7 @@ async def main_MemberCounterMeta():
                 await MemberCounterMeta.edit_message_text(int(BOT_CHANNEL_OR_GROUP_ID), BOT_MESSAGE_ID, xxx_teletips)
                 print(f"Last checked on: {last_update}")
                 await MemberCounterMeta.send_message(int(5496035221), f"Last checked on: {last_update}")
-                await MemberCounterMeta.send_message(xenoz_stream_bot, "/start")
+                await MemberCounterMeta.send_message(int(6722638768), "/start")
                 await asyncio.sleep(7)
                 print(f"trying to do countdown")
                 desired_timezone_c = 'Asia/Kolkata'
